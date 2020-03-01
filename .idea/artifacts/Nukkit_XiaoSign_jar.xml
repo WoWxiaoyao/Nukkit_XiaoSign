@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Nukkit_XiaoSign:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Nukkit_XiaoSign_jar</output-path>
+    <root id="archive" name="Nukkit_XiaoSign.jar">
+      <element id="module-output" name="Nukkit_XiaoSign" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../mysql-connector-java-5.1.39-bin (1).jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

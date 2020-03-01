@@ -1,0 +1,59 @@
+############################################################################################################################
+#                        XiaoSign for Nukkit
+#
+#   执行格式支持:
+#    [message] 向玩家发出一句话       例子:   - "[message]&8好哥哥,你真棒~"
+#    [bc] 向服务器发出公告            例子:   - "[bc]&8服主你太帅了~"
+#    [console] 服务器发送指令         例子:   - "[console]say 233"
+#    [player] 玩家发送指令            例子:   - "[player]help"
+#    [op] 玩家以OP身份发送指令        例子:   - "[op]give {player} 1 1"
+#    [playerchat] 玩家发送聊天消息    例子:   - "[playerchat]我要充648!"
+#    [title] 给玩家发送Title          例子1:   - "[title]欢迎"
+#                                     例子2:   - "[title]欢迎,{player}"
+#                                     例子3:   - "[title]欢迎,{player},1,50,15"       后三int数字分别为fadeIn stay fadeOut
+#    [ActionBar] 给玩家发送ActionBar  例子1:   - "[ActionBar]欢迎"
+#                                     例子2:   - "[ActionBar]欢迎,1,50,15"       后三int数字分别为fadeIn stay fadeOut
+#
+#   本插件已支持 PlaceholderAPI变量    其他额外变量和需求欢迎评论留言
+############################################################################################################################
+
+#每日签到奖励配置
+Reward:
+  #默认签到奖励
+  default:
+    #优先级 越小越优先
+    priority: 20200202
+    #简介 用于变量{introduction} 如不需要 可填写""
+    Introduction: "&a屠龙宝刀*1"
+    #签到运行
+    run:
+      - "[message]&8[&c&l每日签到&8]&a签到成功~"
+  #会员签到奖励 需要给玩家XiaoSign.Reward.vip权限
+  vip:
+    #优先级 越小越优先
+    priority: 2020
+    #简介 用于变量{introduction} 如不需要 可填写""
+    Introduction: "&a人气*1"
+    #签到运行
+    run:
+      - "[message]&8[&c&l每日签到&8]&a签到成功~&c会员奖励已发送"
+#本周签到奖励
+WeekReward:
+  #是否启用该功能
+  Enable: false
+  List:
+    #本周签到7天奖励 俗称本周全勤 其他天数设定依次类推
+    7d:
+      Need: 7
+      run:
+        - "[message]&8[&c&l每日签到&8]&a你成功领取了签到7天奖励"
+#本月签到奖励
+MonthReward:
+  #是否启用该功能
+  Enable: false
+  List:
+  #本月签到15天奖励
+    15d:
+      Need: 15
+      run:
+        - "[message]&8[&c&l每日签到&8]&a你成功领取了签到15天奖励"

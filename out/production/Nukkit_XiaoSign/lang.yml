@@ -1,0 +1,16 @@
+Prefix: "&6[&bXiaoSign&6]"
+NullCommand: "&c未知指令."
+NullReward: "&c服务器设定奖励异常,请联系管理处理."
+NeedPlayer: "&c只有玩家才能执行该操作."
+SuccessReload: "&a重载完成!"
+FailReload: "&c重载失败!请前往控制台查看报错."
+NoPermission: "&c你没有权限这样做"
+NoTotal: "&c没有签到记录"
+AlreadySign : "&c你今天已经签过到了."
+Sign:
+  AlreadySign: "&a已签到"
+  NotSign: "&6可签到"
+  #用于UI显示
+  Ui_AlreadySign: "&a已签到"
+  Ui_NotSign: "&6点击签到"
+  TodayFormat: "yyyy/MM/dd"

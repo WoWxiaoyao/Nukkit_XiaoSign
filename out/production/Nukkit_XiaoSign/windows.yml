@@ -1,0 +1,18 @@
+#windows页面配置
+
+#标题
+Title: "&4&l每日签到 &8({today})"
+
+Content:
+  - "&6玩家 &e» &b{player} &7({info}&7) &8({reward_name})"
+  - "&3本周累计签到:{total_week}次"
+  - "&5本月累计签到:{total_month}次"
+  - "&c总共累计签到:{total_all}次"
+  - ""
+  - "&6每日可领取:{introduction}"
+
+#按键1 用来签到
+Button_1: "{ui_info}"
+
+#按键2
+Button_2: "&c关闭页面"
