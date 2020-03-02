@@ -47,24 +47,26 @@ public class DataUtil
             Mysql.getPlayerData(p);
         }
     }
-    // b为补签预留 1.0.0不进行开发
+
     public static void setPlayerSign(Player p,boolean b)
     {
-        if(!b)
+        if((getPlayerDate(p,"info","sign").equals("NotSign")) || (getPlayerStatus(p,true).equals(Lang.Sign_Ui_CanRecoup)))
         {
-            if(getPlayerDate(p,"info","sign").equals("NotSign"))
+            if(Store.equals("Yml"))
             {
-                if(Store.equals("Yml"))
-                {
-                    Yml.PlayerSign(p);
-                }
-                if(Store.equals("Mysql"))
-                {
-                    Mysql.PlayerSign(p);
-                }
-                RewardUtil.SendReward(p);
+                Yml.PlayerSign(p);
+            }
+            if(Store.equals("Mysql"))
+            {
+                Mysql.PlayerSign(p);
+            }
+            RewardUtil.SendReward(p);
+            if(b)
+            {
+                PrintUtil.PrintPlayer(p,Lang.SuccessCanRecoup,true);
             }
         }
+
     }
 
     public static String getPlayerDate(Player p,String type,String info)
@@ -139,6 +141,15 @@ public class DataUtil
         }
         if(getPlayerDate(p,"info","sign").equals("AlreadySign"))
         {
+            if(ItemUtil.Recoup)
+            {
+                int month = Integer.parseInt(DateUtil.getDate("dd"));
+                int month_sign = Integer.parseInt(getPlayerDate(p,"total","month"));
+                if(month_sign < month)
+                {
+                    return Lang.Sign_Ui_CanRecoup;
+                }
+            }
             if(ui)
             {
                 return Lang.Sign_Ui_AlreadySign;

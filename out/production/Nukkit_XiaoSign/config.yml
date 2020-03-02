@@ -3,10 +3,10 @@
 #        欢迎使用XiaoSign - 逍式签到
 #
 # FileList(配置文件列表):
-#    config.yml 主配置文件 用于配置储存方式以及控制部分功能
-#    lang.yml 语言配置文件 用于自定义语言文件
-#    windows.yml gui配置文件 用于自定义ui标题,按钮名称等
-#    reward.yml 签到奖励配置文件 用于配置签到奖励
+#    config.yml   主配置文件       用于配置储存方式以及控制部分功能
+#    lang.yml     语言配置文件     用于自定义语言文件
+#    windows.yml  gui配置文件      用于自定义ui标题,按钮名称等
+#    reward.yml   签到奖励配置文件 用于配置签到奖励
 #
 ###############################################################
 
@@ -18,3 +18,12 @@ Mysql:
   User: "root"
   PassWord: "root"
   Table: "xiaosign"
+#是否开启补签功能
+Recoup: false
+
+#是否开启玩家登录自动打开签到页面 (仅为未签到的玩家打开)
+JoinAuto:
+  #是否启用
+  Enable: false
+  #延迟(s)
+  Delay: 15

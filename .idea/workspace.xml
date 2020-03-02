@@ -6,7 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82421763-5d16-4985-94e8-2b631c5d1efd" name="Default Changelist" comment="" />
+    <list default="true" id="82421763-5d16-4985-94e8-2b631c5d1efd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lang.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/lang/Lang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/lang/Lang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Yml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Yml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DataUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/FileUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +34,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YJ1YiSj67CeosQk5LtYKNyNl7k" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -31,9 +52,10 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="nukkit_xiaosign" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysql-connector-java-5.1.39-bin (1).jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MinecraftMod/FlansMod-1.12.2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,7 +97,13 @@
       <workItem from="1582897931656" duration="8154000" />
       <workItem from="1582949671219" duration="10632000" />
       <workItem from="1582991575991" duration="3354000" />
-      <workItem from="1583048601525" duration="4065000" />
+      <workItem from="1583048601525" duration="4739000" />
+      <workItem from="1583061679265" duration="1218000" />
+      <workItem from="1583064736703" duration="630000" />
+      <workItem from="1583071058399" duration="631000" />
+      <workItem from="1583074255724" duration="5005000" />
+      <workItem from="1583114921720" duration="95000" />
+      <workItem from="1583153540448" duration="10467000" />
     </task>
     <servers />
   </component>
@@ -87,10 +115,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="711" y="342" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582905202523" />
-    <state x="655" y="328" key="FileChooserDialogImpl" timestamp="1582905671024">
+    <state x="655" y="328" key="FileChooserDialogImpl" timestamp="1583072942397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="328" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582905671024" />
+    <state x="655" y="328" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583072942397" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1582905673189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -99,9 +127,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="334" y="98" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582897548314" />
-    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1583049857980">
+    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1583163746003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583049857980" />
+    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583163746003" />
   </component>
 </project>

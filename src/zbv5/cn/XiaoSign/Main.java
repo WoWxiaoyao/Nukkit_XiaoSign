@@ -8,15 +8,15 @@ import cn.nukkit.plugin.PluginBase;
 import zbv5.cn.XiaoSign.gui.SignGui;
 import zbv5.cn.XiaoSign.lang.Lang;
 import zbv5.cn.XiaoSign.listener.PlayerListener;
-import zbv5.cn.XiaoSign.util.DataUtil;
-import zbv5.cn.XiaoSign.util.DateUtil;
-import zbv5.cn.XiaoSign.util.FileUtil;
-import zbv5.cn.XiaoSign.util.PrintUtil;
+import zbv5.cn.XiaoSign.util.*;
+
+import java.util.regex.Pattern;
 
 public class Main extends PluginBase implements Listener
 {
     private static Main instance;
     public static boolean PlaceholderAPI = false;
+
     public static Main getInstance()
     {
         return instance;
@@ -48,7 +48,6 @@ public class Main extends PluginBase implements Listener
                     for(Player p:getServer().getOnlinePlayers().values())
                     {
                         DataUtil.removeCache(p);
-                        PrintUtil.PrintConsole("Remove "+p.getName());
                     }
                 }
             }
@@ -83,9 +82,39 @@ public class Main extends PluginBase implements Listener
                 } else {
                     PrintUtil.PrintCommandSender(sender,false,"&6========= [&bXiaoSign&6] =========");
                     PrintUtil.PrintCommandSender(sender,false,"&6/XiaoSign &7- &b打开签到页面&7(仅支持玩家)");
+                    PrintUtil.PrintCommandSender(sender,false,"&6/XiaoSign &agive &e<玩家> &e<数量>&7- &b给予玩家补签卡");
                     PrintUtil.PrintCommandSender(sender,false,"&6/XiaoSign &areload &7- &c重载配置文件");
                 }
                 return true;
+            }
+            if(args[0].equalsIgnoreCase("give"))
+            {
+                if(!sender.hasPermission("XiaoSign.commands.give"))
+                {
+                    PrintUtil.PrintCommandSender(sender,true, Lang.NoPermission);
+                    return false;
+                }
+                if (args.length == 3)
+                {
+                    Player p = getServer().getPlayer(args[1]);
+                    if(p == null)
+                    {
+                        PrintUtil.PrintCommandSender(sender,true,Lang.NullPlayer);
+                        return false;
+                    }
+                    Pattern pattern = Pattern.compile("[0-9]*");
+                    if(!pattern.matcher(args[2]).matches())
+                    {
+                        PrintUtil.PrintCommandSender(sender,true,Lang.NoInteger);
+                        return false;
+                    }
+                    int sl = Integer.parseInt(args[2]);
+                    p.getInventory().addItem(ItemUtil.card(sl));
+                    PrintUtil.PrintCommandSender(sender,true,Lang.SuccessRun);
+                    return true;
+                }
+                PrintUtil.PrintCommandSender(sender,true,"&c正确执行方法: /XiaoSign give <玩家> <数量>");
+                return false;
             }
             if(args[0].equalsIgnoreCase("reload"))
             {

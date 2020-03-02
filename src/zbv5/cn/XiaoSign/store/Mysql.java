@@ -76,14 +76,10 @@ public class Mysql
                 {
                     week = rs.getInt("total_week");
                 }
-                //本年
-                if(DateUtil.getDate("yyyy").equals(dates[0]))
+                //年 月 判断
+                if((DateUtil.getDate("yyyy").equals(dates[0])) && (DateUtil.getDate("MM").equals(dates[1])))
                 {
-                    //本月
-                    if(DateUtil.getDate("MM").equals(dates[1]))
-                    {
-                        month = rs.getInt("total_month");
-                    }
+                    month = rs.getInt("total_month");
                 }
             }
             rs.close();
@@ -128,20 +124,18 @@ public class Mysql
             List<String> WeekList = DateUtil.getWeekDate();
             if(WeekList.contains(date))
             {
-                week = week +1;
+                //防止补签大于当前所在星期数
+                if(Integer.parseInt(DataUtil.getPlayerDate(p,"total","week")) < DateUtil.getDayInt())
+                {
+                    week = week +1;
+                }
             } else {
                 week = 1;
             }
             //本年
-            if(DateUtil.getDate("yyyy").equals(dates[0]))
+            if((DateUtil.getDate("yyyy").equals(dates[0]) && (DateUtil.getDate("MM").equals(dates[1]))))
             {
-                //本月
-                if(DateUtil.getDate("MM").equals(dates[1]))
-                {
-                    month = month +1;
-                } else {
-                    month = 1;
-                }
+                month = month +1;
             } else {
                 month = 1;
             }

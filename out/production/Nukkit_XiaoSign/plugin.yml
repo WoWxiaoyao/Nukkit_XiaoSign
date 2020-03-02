@@ -1,6 +1,6 @@
 name: XiaoSign
 main: zbv5.cn.XiaoSign.Main
-version: 1.0.0
+version: 1.1.0
 api: 1.0.0
 author: 逍遥
 softdepend:
@@ -16,6 +16,9 @@ permissions:
   XiaoSign.Reward.default:
     description: 签到默认组所需权限
     default: true
+  XiaoSign.commands.give:
+    description: 给予补签卡所需权限
+    default: op
   XiaoSign.commands.reload:
     description: 重载配置所需权限
     default: op

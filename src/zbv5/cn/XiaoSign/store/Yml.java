@@ -57,14 +57,10 @@ public class Yml
             {
                 week = data.getInt(p.getName()+".total.week");
             }
-            //本年
-            if(DateUtil.getDate("yyyy").equals(dates[0]))
+            //年 月 判断
+            if((DateUtil.getDate("yyyy").equals(dates[0])) && DateUtil.getDate("MM").equals(dates[1]))
             {
-                //本月
-                if(DateUtil.getDate("MM").equals(dates[1]))
-                {
-                    month = data.getInt(p.getName()+".total.month");
-                }
+                month = data.getInt(p.getName()+".total.month");
             }
 
         }
@@ -99,22 +95,20 @@ public class Yml
                 List<String> WeekList = DateUtil.getWeekDate();
                 if(WeekList.contains(DataUtil.getPlayerDate(p,"date","sign")))
                 {
-                    int new_week = Integer.parseInt(DataUtil.getPlayerDate(p,"total","week")) + 1;
-                    data.set(p.getName()+".total.week", new_week);
+                    //防止补签大于当前所在星期数
+                    if(Integer.parseInt(DataUtil.getPlayerDate(p,"total","week")) < DateUtil.getDayInt())
+                    {
+                        int new_week = Integer.parseInt(DataUtil.getPlayerDate(p,"total","week")) + 1;
+                        data.set(p.getName()+".total.week", new_week);
+                    }
                 } else {
                     data.set(p.getName()+".total.week", 1);
                 }
                 //本年
-                if(DateUtil.getDate("yyyy").equals(dates[0]))
+                if((DateUtil.getDate("yyyy").equals(dates[0])) && DateUtil.getDate("MM").equals(dates[1]))
                 {
-                    //本月
-                    if(DateUtil.getDate("MM").equals(dates[1]))
-                    {
-                        int new_month = Integer.parseInt(DataUtil.getPlayerDate(p,"total","month")) + 1;
-                        data.set(p.getName()+".total.month", new_month);
-                    } else {
-                        data.set(p.getName()+".total.month", 1);
-                    }
+                    int new_month = Integer.parseInt(DataUtil.getPlayerDate(p,"total","month")) + 1;
+                    data.set(p.getName()+".total.month", new_month);
                 } else {
                     data.set(p.getName()+".total.month", 1);
                 }

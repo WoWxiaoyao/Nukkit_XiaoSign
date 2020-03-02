@@ -33,4 +33,19 @@ public class DateUtil
         }
         return WeekDateList;
     }
+
+    public static int getDayInt()
+    {
+        String today = getDate("yyyy/MM/dd");
+        int i = 0;
+        for(String s:getWeekDate())
+        {
+            i = i+1;
+            if(s.equals(today))
+            {
+                break;
+            }
+        }
+        return i;
+    }
 }
