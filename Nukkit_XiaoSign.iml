@@ -10,5 +10,6 @@
     <orderEntry type="library" name="PlaceholderAPI-1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="nukkit-1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.39-bin (1)" level="project" />
+    <orderEntry type="library" name="json-20190722" level="project" />
   </component>
 </module>

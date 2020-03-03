@@ -9,10 +9,10 @@ import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.form.response.FormResponseModal;
 import cn.nukkit.form.window.FormWindow;
 import cn.nukkit.form.window.FormWindowModal;
+import org.json.JSONObject;
 import zbv5.cn.XiaoSign.gui.SignGui;
 import zbv5.cn.XiaoSign.lang.Lang;
 import zbv5.cn.XiaoSign.util.DataUtil;
-import zbv5.cn.XiaoSign.util.DateUtil;
 import zbv5.cn.XiaoSign.util.ItemUtil;
 import zbv5.cn.XiaoSign.util.PrintUtil;
 
@@ -34,10 +34,14 @@ public class PlayerListener implements Listener
             return;
         }
         FormWindow gui = e.getWindow();
-        FormWindowModal guiModal = (FormWindowModal)gui;
+
+        JSONObject json = new JSONObject(e.getWindow().getJSONData());
+        String title = json.getString("title");
+        //FormWindowModal guiModal = (FormWindowModal)gui;
+
         FormResponseModal Clicked = (FormResponseModal)e.getResponse();
         Player p = e.getPlayer();
-        if(guiModal.getTitle().equals(PrintUtil.HookVariable(p, SignGui.title)))
+        if(title.equals(PrintUtil.HookVariable(p, SignGui.title)))
         {
             if(Clicked.getClickedButtonText().equals(PrintUtil.cc(Lang.Sign_Ui_NotSign)))
             {
