@@ -7,8 +7,10 @@ import cn.nukkit.event.player.PlayerFormRespondedEvent;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.form.response.FormResponseModal;
+import cn.nukkit.form.response.FormResponseSimple;
 import cn.nukkit.form.window.FormWindow;
 import cn.nukkit.form.window.FormWindowModal;
+import cn.nukkit.form.window.FormWindowSimple;
 import org.json.JSONObject;
 import zbv5.cn.XiaoSign.gui.SignGui;
 import zbv5.cn.XiaoSign.lang.Lang;
@@ -35,23 +37,26 @@ public class PlayerListener implements Listener
         }
         FormWindow gui = e.getWindow();
 
-        JSONObject json = new JSONObject(e.getWindow().getJSONData());
-        String title = json.getString("title");
-        //FormWindowModal guiModal = (FormWindowModal)gui;
-
-        FormResponseModal Clicked = (FormResponseModal)e.getResponse();
-        Player p = e.getPlayer();
-        if(title.equals(PrintUtil.HookVariable(p, SignGui.title)))
+        if ((!(gui instanceof FormWindowSimple)) || (e.wasClosed()))
         {
-            if(Clicked.getClickedButtonText().equals(PrintUtil.cc(Lang.Sign_Ui_NotSign)))
+            return;
+        }
+
+        JSONObject json = new JSONObject(e.getWindow().getJSONData());
+
+        Player p = e.getPlayer();
+
+        if(json.getString("title").equals(PrintUtil.HookVariable(p, SignGui.title)))
+        {
+            if (((FormResponseSimple)e.getResponse()).getClickedButton().getText().equalsIgnoreCase(PrintUtil.cc(Lang.Sign_Ui_NotSign)))
             {
                 DataUtil.setPlayerSign(p,false);
             }
-            if(Clicked.getClickedButtonText().equals(PrintUtil.cc(Lang.Sign_Ui_AlreadySign)))
+            if (((FormResponseSimple)e.getResponse()).getClickedButton().getText().equalsIgnoreCase(PrintUtil.cc(Lang.Sign_Ui_AlreadySign)))
             {
                 PrintUtil.PrintPlayer(p,Lang.AlreadySign,true);
             }
-            if(Clicked.getClickedButtonText().equals(PrintUtil.cc(Lang.Sign_Ui_CanRecoup)))
+            if (((FormResponseSimple)e.getResponse()).getClickedButton().getText().equalsIgnoreCase(PrintUtil.cc(Lang.Sign_Ui_CanRecoup)))
             {
                 if(ItemUtil.TakePlayerItem(p,ItemUtil.card(1)))
                 {

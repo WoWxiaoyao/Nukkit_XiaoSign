@@ -160,7 +160,7 @@ public class RewardUtil
             if(s.startsWith("[player]"))
             {
                 s=s.replace("[player]", "");
-                p.chat("/"+s);
+                Main.getInstance().getServer().dispatchCommand(p, s);
             }
             if(s.startsWith("[title]"))
             {
@@ -215,7 +215,7 @@ public class RewardUtil
                 try
                 {
                     s=s.replace("[op]", "");
-                    p.chat("/"+s);
+                    Main.getInstance().getServer().dispatchCommand(p, s);
                 } catch (Exception e)
                 {
                     e.printStackTrace();

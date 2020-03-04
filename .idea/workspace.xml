@@ -7,11 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82421763-5d16-4985-94e8-2b631c5d1efd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Nukkit_XiaoSign_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Nukkit_XiaoSign_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nukkit_XiaoSign.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Nukkit_XiaoSign.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/gui/SignGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/gui/SignGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/RewardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/RewardUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-20190722.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/新建文件夹 (2)" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -96,7 +97,14 @@
       <workItem from="1583114921720" duration="95000" />
       <workItem from="1583153540448" duration="11868000" />
       <workItem from="1583196412720" duration="25000" />
-      <workItem from="1583220263458" duration="1505000" />
+      <workItem from="1583220263458" duration="2410000" />
+      <workItem from="1583234830390" duration="264000" />
+      <workItem from="1583242369681" duration="486000" />
+      <workItem from="1583281968521" duration="4026000" />
+      <workItem from="1583287199001" duration="506000" />
+      <workItem from="1583287796075" duration="343000" />
+      <workItem from="1583293242128" duration="59000" />
+      <workItem from="1583297154430" duration="510000" />
     </task>
     <servers />
   </component>
@@ -108,18 +116,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="711" y="342" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582905202523" />
-    <state x="655" y="328" key="FileChooserDialogImpl" timestamp="1583221135755">
+    <state x="600" y="329" key="FileChooserDialogImpl" timestamp="1583287704731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="328" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583221135755" />
+    <state x="600" y="329" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583287704731" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1583221136596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583221136596" />
-    <state x="334" y="98" key="new project wizard" timestamp="1582897548314">
+    <state x="334" y="98" key="new project wizard" timestamp="1583235093573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="334" y="98" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582897548314" />
+    <state x="334" y="98" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583235093573" />
     <state x="936" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1583163746003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
