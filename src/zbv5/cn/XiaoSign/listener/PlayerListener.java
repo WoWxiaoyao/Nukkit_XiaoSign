@@ -101,7 +101,10 @@ public class PlayerListener implements Listener
         final Timer timer=new Timer(); TimerTask task=new TimerTask(){
         public void run()
         {
-            SignGui.openGui(p);
+            if(p.isOnline())
+            {
+                SignGui.openGui(p);
+            }
             timer.cancel();
         }
     };
