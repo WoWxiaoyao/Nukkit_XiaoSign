@@ -19,12 +19,21 @@ public class ItemUtil
         i.setCustomName(PrintUtil.cc(FileUtil.items.getString("Card.CustomName")));
         List<String> lores = new ArrayList<>();
         lores = FileUtil.items.getStringList("Card.Lores");
-        String lore = "";
-        for (int ii = 0; ii < lores.size(); ii++)
+
+        StringBuilder lore = new StringBuilder();
+        int size = 1;
+        for (String s :lores)
         {
-            lore = PrintUtil.cc(lore + lores.get(ii) +"\n");
+            if(size == lores.size())
+            {
+                lore.append(s);
+            } else {
+                lore.append(s).append("\n");
+            }
+            size ++;
         }
-        i.setLore(lore);
+
+        i.setLore(PrintUtil.cc(lore.toString()));
         i.addEnchantment(Enchantment.getEnchantment(17));
         return i;
     }
@@ -72,5 +81,18 @@ public class ItemUtil
 
 
         return b;
+    }
+
+    public static int getFullInventorySize(Player p)
+    {
+        int size = p.getInventory().getSize();
+        for(Item item:p.getInventory().getContents().values())
+        {
+            if((item != null) && (item.getId() != 0))
+            {
+                size = size -1;
+            }
+        }
+        return size;
     }
 }

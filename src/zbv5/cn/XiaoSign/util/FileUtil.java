@@ -44,7 +44,6 @@ public class FileUtil
             PrintUtil.PrintConsole("&c未启用登录监听自动打开UI.");
         }
 
-        DataUtil.CheckDataStore();
         ItemUtil.CheckRecoup();
 
         File Windows_Yml = new File(Main.getInstance().getDataFolder(), "windows.yml");

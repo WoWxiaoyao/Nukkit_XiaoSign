@@ -18,13 +18,15 @@ public class Mysql
     static final String User = FileUtil.config.getString("Mysql.User");
     static final String Pass = FileUtil.config.getString("Mysql.PassWord");
 
-    public static void createTable()
+    public static boolean createTable()
     {
+        boolean c = true;
         try {
             Class.forName(Driver);
         }catch (ClassNotFoundException e){
             PrintUtil.PrintConsole("&3Mysql &c数据库驱动异常!");
             e.printStackTrace();
+            c = false;
         }
 
         Connection conn = null;
@@ -38,9 +40,9 @@ public class Mysql
         {
             PrintUtil.PrintConsole("&3Mysql &c数据库创表出现问题!");
             e.printStackTrace();
-
-            Main.getInstance().getServer().getPluginManager().disablePlugin(Main.getInstance());
+            c = false;
         }
+        return c;
     }
 
     public static void getPlayerData(Player p)
@@ -87,12 +89,60 @@ public class Mysql
             conn.close();
         } catch (SQLException e)
         {
-            PrintUtil.PrintConsole("&3玩家数据 &c查询出现问题!");
+            PrintUtil.PrintConsole("{prefix}&3玩家数据 &c查询出现问题!");
             e.printStackTrace();
         }
         DataUtil.setCache(p,all,month,week,date,sign);
     }
 
+    public static String getOfflinePlayerData(String PlayerName)
+    {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(Url,User,Pass);
+            Statement st = conn.createStatement();
+            String table = FileUtil.config.getString("Mysql.Table");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM "+table+" WHERE name=?");
+            String sql = "select * from "+table+" where name='" + PlayerName + "' ";
+            ResultSet rs = ps.executeQuery(sql);
+            while (!rs.next())
+            {
+                rs.close();
+                st.close();
+                conn.close();
+                return "null_data";
+            }
+            String date = rs.getString("date");
+            String[] dates = date.split("/");
+            int all = rs.getInt("total_all");
+            int month = 0;
+            int week = 0;
+            List<String> WeekList = DateUtil.getWeekDate();
+            if(WeekList.contains(date))
+            {
+                week = rs.getInt("total_week");
+            }
+            //年 月 判断
+            if((DateUtil.getDate("yyyy").equals(dates[0])) && (DateUtil.getDate("MM").equals(dates[1])))
+            {
+                month = rs.getInt("total_month");
+            }
+            rs.close();
+            st.close();
+            conn.close();
+            if(DateUtil.getDate("yyyy/MM/dd").equals(date))
+            {
+                return "AlreadySign-"+date+"-"+week+"-"+month+"-"+all;
+            } else {
+                return "NotSign-"+date+"-"+week+"-"+month+"-"+all;
+            }
+        } catch (SQLException e)
+        {
+            PrintUtil.PrintConsole("{prefix}&3玩家数据 &c查询出现问题!");
+            e.printStackTrace();
+        }
+        return "null_data";
+    }
 
     public static void PlayerSign(Player p)
     {
@@ -140,10 +190,13 @@ public class Mysql
                 month = 1;
             }
             st.executeUpdate("UPDATE "+table+" set name= '" + p.getName() + "' , total_all= '" + all + "', total_month='" + month + "' , total_week='" + week + "', date='" + DateUtil.getDate("yyyy/MM/dd") + "'  WHERE name='" + p.getName() + "'");
-            DataUtil.setCache(p,all,month,week,date,"AlreadySign");
+            DataUtil.setCache(p,all,month,week,DateUtil.getDate("yyyy/MM/dd"),"AlreadySign");
+            rs.close();
+            st.close();
+            conn.close();
         } catch (SQLException e)
         {
-            PrintUtil.PrintConsole("&3玩家数据 &c修改出现问题!");
+            PrintUtil.PrintConsole("{prefix}&3玩家数据 &c修改出现问题!");
             e.printStackTrace();
         }
     }

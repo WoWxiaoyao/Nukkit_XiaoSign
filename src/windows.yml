@@ -1,5 +1,5 @@
 #windows页面配置
-
+version: 1.0.0
 #标题
 Title: "&4&l每日签到 &8({today})"
 

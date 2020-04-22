@@ -6,45 +6,22 @@ import cn.nukkit.Player;
 import zbv5.cn.XiaoSign.lang.Lang;
 import zbv5.cn.XiaoSign.store.Mysql;
 import zbv5.cn.XiaoSign.store.Yml;
-import zbv5.cn.XiaoSign.util.FileUtil;
 public class DataUtil
 {
-    public static String Store = "Yml";
-
+    public static boolean useSql = false;
     public static HashMap<String, Integer> total_all = new HashMap<String, Integer>();
     public static HashMap<String, Integer> total_month = new HashMap<String, Integer>();
     public static HashMap<String, Integer> total_week = new HashMap<String, Integer>();
     public static HashMap<String, String> date_sign = new HashMap<String, String>();
     public static HashMap<String, String> today = new HashMap<String, String>();
 
-    public static void CheckDataStore()
-    {
-        if(FileUtil.config.getString("Store").equals("Yml"))
-        {
-            Store = "Yml";
-            PrintUtil.PrintConsole("&e储存方式: &6"+Store);
-            Yml.createData();
-            return;
-        }
-        if(FileUtil.config.getString("Store").equals("Mysql"))
-        {
-            Store = "Mysql";
-            PrintUtil.PrintConsole("&e储存方式: &6"+Store);
-            Mysql.createTable();
-            return;
-        }
-        PrintUtil.PrintConsole("&c储存方式异常,请检查配置文件Store配置.");
-    }
-
     public static void getPlayerDateCache(Player p)
     {
-        if(Store.equals("Yml"))
-        {
-            Yml.getPlayerData(p);
-        }
-        if(Store.equals("Mysql"))
+        if(useSql)
         {
             Mysql.getPlayerData(p);
+        } else {
+            Yml.getPlayerData(p);
         }
     }
 
@@ -52,18 +29,16 @@ public class DataUtil
     {
         if((getPlayerDate(p,"info","sign").equals("NotSign")) || (getPlayerStatus(p,true).equals(Lang.Sign_Ui_CanRecoup)))
         {
-            if(Store.equals("Yml"))
-            {
-                Yml.PlayerSign(p);
-            }
-            if(Store.equals("Mysql"))
+            if(useSql)
             {
                 Mysql.PlayerSign(p);
+            } else {
+                Yml.PlayerSign(p);
             }
             RewardUtil.SendReward(p);
             if(b)
             {
-                PrintUtil.PrintPlayer(p,Lang.SuccessCanRecoup,true);
+                PrintUtil.PrintPlayer(p,Lang.SuccessCanRecoup);
             }
         }
 
@@ -106,6 +81,17 @@ public class DataUtil
         }
         return "null";
     }
+
+    public static String getOfflinePlayerDate(String PlayerName)
+    {
+        if(useSql)
+        {
+            return Mysql.getOfflinePlayerData(PlayerName);
+        } else {
+            return Yml.getOfflinePlayerData(PlayerName);
+        }
+    }
+
     public static void setCache(Player p, int all, int month, int week ,String date,String sign)
     {
         total_all.put(p.getName(),all);
@@ -123,7 +109,19 @@ public class DataUtil
         date_sign.remove(p.getName());
         today.remove(p.getName());
     }
+    public static String getStatus(String s)
+    {
+        if(s.equals("NotSign"))
+        {
+            return Lang.Sign_NotSign;
+        }
+        if(s.equals("AlreadySign"))
+        {
 
+            return Lang.Sign_AlreadySign;
+        }
+        return "null";
+    }
     public static String getPlayerStatus(Player p,Boolean ui)
     {
         if(!total_all.containsKey(p.getName()))

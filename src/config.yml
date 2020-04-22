@@ -9,12 +9,13 @@
 #    reward.yml   签到奖励配置文件 用于配置签到奖励
 #
 ###############################################################
-
-#储存方式: Yml Mysql
-Store: Yml
+version: 1.2.0
+#是否使用api变量 (登录自动打开有可能会与api变量导致报错)
+PlaceholderAPI: true
 #数据库配置
 Mysql:
-  Url: "jdbc:mysql://127.0.0.1:3306/db?useSSL=false"
+  Use: false
+  Url: "jdbc:mysql://127.0.0.1:3306/db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT"
   User: "root"
   PassWord: "root"
   Table: "xiaosign"

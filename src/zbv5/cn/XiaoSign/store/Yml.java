@@ -6,6 +6,7 @@ import zbv5.cn.XiaoSign.Main;
 import zbv5.cn.XiaoSign.lang.Lang;
 import zbv5.cn.XiaoSign.util.DataUtil;
 import zbv5.cn.XiaoSign.util.DateUtil;
+import zbv5.cn.XiaoSign.util.FileUtil;
 import zbv5.cn.XiaoSign.util.PrintUtil;
 
 import java.io.File;
@@ -66,6 +67,35 @@ public class Yml
         }
         DataUtil.setCache(p,all,month,week,date,sign);
     }
+    public static String getOfflinePlayerData(String PlayerName)
+    {
+        if(data.getSections().containsKey(PlayerName))
+        {
+            String date = data.getString(PlayerName+".date");
+            String[] dates = date.split("/");
+            int all = data.getInt(PlayerName+".total.all");
+            int month = 0;
+            int week = 0;
+            List<String> WeekList = DateUtil.getWeekDate();
+            if(WeekList.contains(date))
+            {
+                week = data.getInt(PlayerName+".total.week");
+            }
+            if((DateUtil.getDate("yyyy").equals(dates[0])) && DateUtil.getDate("MM").equals(dates[1]))
+            {
+                month = data.getInt(PlayerName+".total.month");
+            }
+            //[0] [1] [2] [3] [4]
+            if(DateUtil.getDate("yyyy/MM/dd").equals(date))
+            {
+                return "AlreadySign-"+date+"-"+week+"-"+month+"-"+all;
+            } else {
+                return "NotSign-"+date+"-"+week+"-"+month+"-"+all;
+            }
+        } else {
+            return "null_data";
+        }
+    }
 
     public static void PlayerSign(Player p)
     {
@@ -114,7 +144,6 @@ public class Yml
                 }
             }
             data.save(PlayerData);
-            data = new Config(new File(Main.getInstance().getDataFolder() + "/data.yml"));
             getPlayerData(p);
 
         }

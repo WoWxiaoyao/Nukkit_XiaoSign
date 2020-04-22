@@ -2,7 +2,6 @@ package zbv5.cn.XiaoSign.gui;
 
 import cn.nukkit.Player;
 import cn.nukkit.form.element.ElementButton;
-import cn.nukkit.form.window.FormWindowModal;
 import cn.nukkit.form.window.FormWindowSimple;
 import zbv5.cn.XiaoSign.util.FileUtil;
 import zbv5.cn.XiaoSign.util.PrintUtil;
@@ -24,18 +23,33 @@ public class SignGui
 
     public static FormWindowSimple getUi(Player p)
     {
-        String content = "";
-              for (int i = 0; i < contents.size(); i++)
-              {
-                  content = PrintUtil.cc(content + contents.get(i) +"\n");
-              }
-        FormWindowSimple ui = new FormWindowSimple(PrintUtil.HookVariable(p,title), PrintUtil.HookVariable(p,content));
+        FormWindowSimple ui = new FormWindowSimple(PrintUtil.HookVariable(p,title), PrintUtil.HookVariable(p,buildString(contents)));
         ui.addButton(new ElementButton(PrintUtil.HookVariable(p,button_1)));
         ui.addButton(new ElementButton(PrintUtil.HookVariable(p,button_2)));
         return ui;
     }
 
-
+    public static String buildString(List<String> list)
+    {
+        if(list.isEmpty())
+        {
+            return "null";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            int size = 1;
+            for (String s :list)
+            {
+                if(size == list.size())
+                {
+                    sb.append(s);
+                } else {
+                    sb.append(s).append("\n");
+                }
+                size ++;
+            }
+            return sb.toString();
+        }
+    }
 
 
     public static void LoadWindows()

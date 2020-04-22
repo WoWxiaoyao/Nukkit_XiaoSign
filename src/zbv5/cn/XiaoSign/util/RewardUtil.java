@@ -38,7 +38,7 @@ public class RewardUtil
         {
             Run(p,RunList);
         } else {
-            PrintUtil.PrintPlayer(p, Lang.NullReward,true);
+            PrintUtil.PrintPlayer(p, Lang.NullReward);
         }
         CheckTotalReward(p);
     }
@@ -70,7 +70,7 @@ public class RewardUtil
                         Run(p,RunList);
                         break;
                     } else {
-                        PrintUtil.PrintPlayer(p, Lang.NullReward,true);
+                        PrintUtil.PrintPlayer(p, Lang.NullReward);
                     }
                 }
             }
@@ -89,7 +89,7 @@ public class RewardUtil
                         Run(p,RunList);
                         break;
                     } else {
-                        PrintUtil.PrintPlayer(p, Lang.NullReward,true);
+                        PrintUtil.PrintPlayer(p, Lang.NullReward);
                     }
                 }
             }
@@ -127,7 +127,7 @@ public class RewardUtil
         }
         catch (Exception e)
         {
-            PrintUtil.PrintConsole("&3reward.yml &c读取出现问题!");
+            PrintUtil.PrintConsole("{prefix}&3reward.yml &c读取出现问题!");
             e.printStackTrace();
         }
         return name;
@@ -145,12 +145,12 @@ public class RewardUtil
             if(s.startsWith("[message]"))
             {
                 s=s.replace("[message]", "");
-                PrintUtil.PrintPlayer(p,s,false);
+                PrintUtil.PrintPlayer(p,s);
             }
             if(s.startsWith("[bc]"))
             {
                 s=s.replace("[bc]", "");
-                PrintUtil.PrintAllPlayer(s);
+                PrintUtil.PrintBroadcast(s);
             }
             if(s.startsWith("[console]"))
             {
@@ -183,7 +183,7 @@ public class RewardUtil
                 }
                 catch (Exception e)
                 {
-                    PrintUtil.PrintConsole("&3Run出现问题 &c执行Title出现问题");
+                    PrintUtil.PrintConsole("{prefix}&3Run出现问题 &c执行Title出现问题");
                     e.printStackTrace();
                 }
             }
@@ -204,7 +204,7 @@ public class RewardUtil
                 }
                 catch (Exception e)
             {
-                    PrintUtil.PrintConsole("&3Run出现问题 &c执行ActionBar出现问题");
+                    PrintUtil.PrintConsole("{prefix}&3Run出现问题 &c执行ActionBar出现问题");
                     e.printStackTrace();
                 }
             }
@@ -226,14 +226,14 @@ public class RewardUtil
                 }
                 catch (Exception e)
                 {
-                    PrintUtil.PrintConsole("&3Run出现问题 &c执行OP指令操作出现问题");
+                    PrintUtil.PrintConsole("{prefix}&3Run出现问题 &c执行OP指令操作出现问题");
                     e.printStackTrace();
                     p.setOp(false);
                 }
             }
-            if(s.startsWith("[playerchat]"))
+            if(s.startsWith("[chat]"))
             {
-                s=s.replace("[playerchat]", "");
+                s=s.replace("[chat]", "");
                 p.chat(s);
             }
         }

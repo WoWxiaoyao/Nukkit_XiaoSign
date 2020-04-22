@@ -13,49 +13,53 @@ public class PrintUtil
 {
     public static void PrintConsole(String s)
     {
-        Main.getInstance().getServer().getConsoleSender().sendMessage(cc(Lang.Prefix+s));
+        Main.getInstance().getServer().getConsoleSender().sendMessage(cc(s));
     }
-    public static void PrintPlayer(Player p, String s,Boolean Prefix)
+
+    public static void PrintPlayer(Player p, String s)
     {
-        if(Prefix)
-        {
-            p.sendMessage(cc(Lang.Prefix+s));
-        } else {
-            p.sendMessage(cc(s));
-        }
+        p.sendMessage(cc(s));
     }
-    public static void PrintAllPlayer(String s)
+    public static void PrintBroadcast(String s)
     {
-        Main.getInstance().getServer().broadcastMessage(s);
+        Main.getInstance().getServer().broadcastMessage(cc(s));
     }
 
     public static String cc(String s)
     {
+        s = s.replace("{prefix}", Lang.Prefix);
         s = TextFormat.colorize('&', s);
         return s;
     }
 
-    public static void PrintCommandSender(CommandSender sender, Boolean prefix, String s)
+    public static void PrintCommandSender(CommandSender sender, String s)
     {
-        if(prefix)
+        if(!s.equalsIgnoreCase("none"))
         {
-            sender.sendMessage(cc(Lang.Prefix+s));
-        } else {
             sender.sendMessage(cc(s));
         }
     }
     public static String HookVariable(Player p,String s)
     {
         s = s.replace("{player}",p.getName());
-        if(Main.PlaceholderAPI)
+        if((Main.PlaceholderAPI) && (FileUtil.config.getBoolean("PlaceholderAPI")))
         {
             s = PlaceholderAPI.getInstance().translateString(s,p);
         }
         s = s.replace("{info}",DataUtil.getPlayerStatus(p,false));
         s = s.replace("{ui_info}",DataUtil.getPlayerStatus(p,true));
         s = s.replace("{today}",DateUtil.getDate(Lang.Sign_TodayFormat));
-        s = s.replace("{introduction}",RewardUtil.getRewardIntroduction(p));
-        s = s.replace("{reward_name}",RewardUtil.getRewardName(p));
+
+        if(RewardUtil.getRewardIntroduction(p) != null)
+        {
+            s = s.replace("{introduction}",RewardUtil.getRewardIntroduction(p));
+        }
+
+        if(RewardUtil.getRewardName(p) != null)
+        {
+            s = s.replace("{reward_name}",RewardUtil.getRewardName(p));
+        }
+
         s = s.replace("{prefix}",Lang.Prefix);
         s = s.replace("{date}",DataUtil.getPlayerDate(p,"date","sign"));
         s = s.replace("{total_all}",DataUtil.getPlayerDate(p,"total","all"));

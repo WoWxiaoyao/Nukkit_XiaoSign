@@ -7,9 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82421763-5d16-4985-94e8-2b631c5d1efd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/nukkit_1_0_SNAPSHOT.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nukkit_XiaoSign.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Nukkit_XiaoSign.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/lang.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nukkit_XiaoSign/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lang.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reward.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/reward.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/windows.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/windows.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/gui/SignGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/gui/SignGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/lang/Lang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/lang/Lang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/listener/PlayerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Yml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/store/Yml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/DataUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/ItemUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/PrintUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/PrintUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/RewardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zbv5/cn/XiaoSign/util/RewardUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +50,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -44,29 +61,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lib/Nukkit/nk1_673.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -104,33 +109,37 @@
       <workItem from="1583297154430" duration="1225000" />
       <workItem from="1583328482614" duration="52000" />
       <workItem from="1583584870739" duration="896000" />
-      <workItem from="1583714334724" duration="1093000" />
+      <workItem from="1583714334724" duration="1356000" />
+      <workItem from="1586060903262" duration="1867000" />
+      <workItem from="1587431770979" duration="8000" />
+      <workItem from="1587479673665" duration="5488000" />
+      <workItem from="1587515324309" duration="6005000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="711" y="342" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1582905202523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="711" y="342" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582905202523" />
-    <state x="600" y="329" key="FileChooserDialogImpl" timestamp="1583287704731">
+    <state x="600" y="329" key="FileChooserDialogImpl" timestamp="1587479996126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="600" y="329" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583287704731" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1583714735567">
+    <state x="600" y="329" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587479996126" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1587479998712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583714735567" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587479998712" />
     <state x="334" y="98" key="new project wizard" timestamp="1583585767173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="334" y="98" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583585767173" />
-    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1583163746003">
+    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1587486643649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583163746003" />
+    <state x="936" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587486643649" />
   </component>
 </project>

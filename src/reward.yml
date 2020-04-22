@@ -7,7 +7,7 @@
 #    [console] 服务器发送指令         例子:   - "[console]say 233"
 #    [player] 玩家发送指令            例子:   - "[player]help"
 #    [op] 玩家以OP身份发送指令        例子:   - "[op]give {player} 1 1"
-#    [playerchat] 玩家发送聊天消息    例子:   - "[playerchat]我要充648!"
+#    [chat] 玩家发送聊天消息    例子:   - "[chat]我要充648!"
 #    [title] 给玩家发送Title          例子1:   - "[title]欢迎"
 #                                     例子2:   - "[title]欢迎,{player}"
 #                                     例子3:   - "[title]欢迎,{player},1,50,15"       后三int数字分别为fadeIn stay fadeOut

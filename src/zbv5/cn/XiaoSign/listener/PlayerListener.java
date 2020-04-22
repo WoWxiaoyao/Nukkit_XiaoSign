@@ -54,7 +54,7 @@ public class PlayerListener implements Listener
             }
             if (((FormResponseSimple)e.getResponse()).getClickedButton().getText().equalsIgnoreCase(PrintUtil.cc(Lang.Sign_Ui_AlreadySign)))
             {
-                PrintUtil.PrintPlayer(p,Lang.AlreadySign,true);
+                PrintUtil.PrintPlayer(p,Lang.AlreadySign);
             }
             if (((FormResponseSimple)e.getResponse()).getClickedButton().getText().equalsIgnoreCase(PrintUtil.cc(Lang.Sign_Ui_CanRecoup)))
             {
@@ -62,7 +62,7 @@ public class PlayerListener implements Listener
                 {
                     DataUtil.setPlayerSign(p,true);
                 }else{
-                    PrintUtil.PrintPlayer(p,Lang.FailCanRecoup,true);
+                    PrintUtil.PrintPlayer(p,Lang.FailCanRecoup);
                 }
             }
         }
